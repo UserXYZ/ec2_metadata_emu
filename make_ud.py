@@ -29,7 +29,7 @@ def main():
 		f = sys.argv[2]
 		iid = sys.argv[1]
 	else:
-		print("Usage: {prg} instance-id file, where file contains userdata in YAML format").format(prg = sys.argv[0])
+		print("Usage: {prg} instance-id user_data_file, where user_data_file contains userdata in YAML format").format(prg = sys.argv[0])
 		sys.exit(1)
 
 	u64 = enc_ud(f)
