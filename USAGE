@@ -1,0 +1,13 @@
+Since the only parameter that you can give to your VM hypervisor that
+influences cloud-init mechanism is their MAC address, that is your
+starting point.
+So, the steps to prepare emulator is as follows:
+
+- determine IP range and MAC address range for your VMs
+- fill the data in the database, in tables subnets and maps
+- use make_iid.py to generate instance-id for VM based on its MAC
+  address and hostname
+- use make_ud.py to create base64 encoded userdata which goes into
+  the database, if you need to have user-data returned from metadata server
+- use make_pubk.py to create public keys for every VM instance, if needed.
+  If it exists for a certain instance-id, it will be added to metadata.
